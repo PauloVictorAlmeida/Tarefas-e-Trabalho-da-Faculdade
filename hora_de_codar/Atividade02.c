@@ -39,8 +39,7 @@ int main (){
     printf("Digite a sua terceira nota: \n");
     scanf("%f", &media3);
 
-    mediafinal = (media1 + media2 + media3) /3;
-    mediafinal = (media1 + media2 + media3) /3; //
+    mediafinal = (media1 + media2 + media3) /3; //poderia ter usado o chase (float) caso as medias estivessem em inteiro (int)
 
     printf("A sua media é = %.2f", mediafinal);
 
