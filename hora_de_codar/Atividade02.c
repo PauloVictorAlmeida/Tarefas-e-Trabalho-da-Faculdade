@@ -40,6 +40,7 @@ int main (){
     scanf("%f", &media3);
 
     mediafinal = (media1 + media2 + media3) /3;
+    mediafinal = (media1 + media2 + media3) /3; //
 
     printf("A sua media é = %.2f", mediafinal);
 
