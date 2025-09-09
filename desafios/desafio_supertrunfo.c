@@ -61,6 +61,8 @@ int main() {
     scanf("%f", &carta02.pib);
 
     carta02.pibcapital = carta02.pib / carta02.populacao;
+
+    carta02.densidadepopulacional = carta02.populacao / carta02.area;
     
 
     //Exibiçao dos dados das cartas
