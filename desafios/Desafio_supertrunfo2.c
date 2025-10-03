@@ -183,11 +183,10 @@ int main() {
         }
         }
         break;
-
     default:
         printf("Opção inválida! \n");
         break;
     }
-    
+    //nao soube o que fazer com o supepoder, deixei guardado para caso eu use futuramente com algum feedback do professor
     return 0;
 }
