@@ -12,6 +12,7 @@ int main() {
     float superpoder;
     };
     int menu;
+    int atributo1, atributo2;;
     
    //criaçao das duas cartas
     struct Carta carta01;
@@ -188,5 +189,116 @@ int main() {
         break;
     }
     //nao soube o que fazer com o supepoder, deixei guardado para caso eu use futuramente com algum feedback do professor
-    return 0;
+
+    printf("Escolha o primeiro atributo para ser comparado: \n");
+    printf("1 - Pontos Turisticos \n");
+    printf("2 - População \n");
+    printf("3 - Área \n");  
+    printf("4 - PIB \n");
+    printf("5 - PIB per Capital \n");
+    printf("6 - Densidade Populacional \n");
+    scanf("%d", &atributo1);
+
+    printf("Escolha o segundo atributo (diferete do primeiro): \n");
+    if (atributo1 != 1) printf("1 - Pontos Turisticos \n");
+    if (atributo1 != 2) printf("2 - Populaçao \n");
+    if (atributo1 != 3) printf("3 - Área \n");  
+    if (atributo1 != 4) printf("4 - PIB \n");
+    if (atributo1 != 5) printf("5 - PIB per Capital \n");
+    if (atributo1 != 6) printf("6 - Densidade Populçional \n");
+
+    scanf("%d", &atributo2);
+    
+    if(atributo1 == atributo2){
+        printf("Erro: Voce escolheu o mesmo atributo! \n");
+    }
+    
+    float valor1carta1 = 0, valor1carta2 = 0;
+    float valor2carta1 = 0, valor2carta2 = 0;
+
+// Primeiro atributo
+switch (atributo1) {
+    case 1:
+        valor1carta1 = carta01.pontos_turisticos;
+        valor1carta2 = carta02.pontos_turisticos;
+        break;
+    case 2:
+        valor1carta1 = carta01.populacao;
+        valor1carta2 = carta02.populacao;
+        break;
+    case 3:
+        valor1carta1 = carta01.area;
+        valor1carta2 = carta02.area;
+        break;
+    case 4:
+        valor1carta1 = carta01.pib;
+        valor1carta2 = carta02.pib;
+        break;
+    case 5:
+        valor1carta1 = carta01.pibcapital;
+        valor1carta2 = carta02.pibcapital;
+        break;
+    case 6:
+        valor1carta1 = carta01.densidadepopulacional;
+        valor1carta2 = carta02.densidadepopulacional;
+        break;
+}
+
+// Segundo atributo
+switch (atributo2) {
+    case 1:
+        valor2carta1 = carta01.pontos_turisticos;
+        valor2carta2 = carta02.pontos_turisticos;
+        break;
+    case 2:
+        valor2carta1 = carta01.populacao;
+        valor2carta2 = carta02.populacao;
+        break;
+    case 3:
+        valor2carta1 = carta01.area;
+        valor2carta2 = carta02.area;
+        break;
+    case 4:
+        valor2carta1 = carta01.pib;
+        valor2carta2 = carta02.pib;
+        break;
+    case 5:
+        valor2carta1 = carta01.pibcapital;
+        valor2carta2 = carta02.pibcapital;
+        break;
+    case 6:
+        valor2carta1 = carta01.densidadepopulacional;
+        valor2carta2 = carta02.densidadepopulacional;
+        break;
+}
+
+
+float soma1 = valor1carta1 + valor2carta1;
+float soma2 = valor1carta2 + valor2carta2;
+
+
+printf("\n---- COMPARAÇÃO ENTRE CARTAS ----\n");
+printf("Carta 01: %s", carta01.nome);
+printf("Carta 02: %s", carta02.nome);
+
+printf("\nAtributo 1 (escolha %d):\n", atributo1);
+printf("Carta 01: %.2f\n", valor1carta1);
+printf("Carta 02: %.2f\n", valor1carta2);
+
+printf("\nAtributo 2 (escolha %d):\n", atributo2);
+printf("Carta 01: %.2f\n", valor2carta1);
+printf("Carta 02: %.2f\n", valor2carta2);
+
+printf("\nSoma dos atributos:\n");
+printf("Carta 01: %.2f\n", soma1);
+printf("Carta 02: %.2f\n", soma2);
+
+// Comparação final
+if (soma1 > soma2)
+    printf("\nResultado: Carta 01 venceu!\n");
+else if (soma2 > soma1)
+    printf("\nResultado: Carta 02 venceu!\n");
+else
+    printf("\nResultado: Empate!\n");
+return 0;
 }
